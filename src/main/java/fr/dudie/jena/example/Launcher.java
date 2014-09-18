@@ -22,6 +22,8 @@ public class Launcher {
             System.exit(1);
         }
 
+        System.out.printf("Begin %s\n", launcher.example);
         launcher.example.app.run();
+        System.out.printf("End %s\n", launcher.example);
     }
 }
