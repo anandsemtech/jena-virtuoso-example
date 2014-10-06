@@ -21,11 +21,11 @@ Then you can include these Artifacts:
     <dependency>
       <groupId>com.openlink.virtuoso</groupId>
       <artifactId>virtjdbc4-1</artifactId>
-      <version>3.72</version>
+      <version>3.74</version>
     </dependency>
 
     <dependency>
       <groupId>com.openlink.virtuoso</groupId>
       <artifactId>virt_jena2</artifactId>
-      <version>1.10</version>
+      <version>1.12</version>
     </dependency>
