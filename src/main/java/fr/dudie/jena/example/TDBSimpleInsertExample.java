@@ -17,7 +17,7 @@ import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.rdf.model.impl.ResourceImpl;
 import com.hp.hpl.jena.tdb.TDBFactory;
 
-public class SingleInsertExample implements Runnable {
+public class TDBSimpleInsertExample implements Example {
 
     private static final String GRAPH_NAME = "g://fr.dudie.jena/example";
     private static final File workDir;
@@ -60,5 +60,9 @@ public class SingleInsertExample implements Runnable {
                 System.out.println();
             }
         }
+    }
+
+    @Override
+    public void setLauncher(final Launcher l) {
     }
 }

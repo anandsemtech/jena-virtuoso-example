@@ -1,13 +1,6 @@
 package fr.dudie.jena.example;
 
-public enum Example {
-    
-    SINGLE_INSERT(new SingleInsertExample()), 
-    SINGLE_INSERT_VIRT(new SingleInsertVirtuosoExample());
+public interface Example extends Runnable {
 
-    public final Runnable app;
-
-    private Example(final Runnable example) {
-        this.app = example;
-    }
+    void setLauncher(Launcher l);
 }
