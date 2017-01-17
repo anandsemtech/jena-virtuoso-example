@@ -1,4 +1,4 @@
-package fr.dudie.jena.example;
+package com.aeq.semantic;
 
 import java.sql.SQLException;
 import java.util.concurrent.ArrayBlockingQueue;
@@ -18,11 +18,11 @@ import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.Resource;
 
-import fr.dudie.jena.example.concurrent.WaitAndAddTaskLaterPolicy;
+import com.aeq.semantic.concurrent.WaitAndAddTaskLaterPolicy;
 
-public class VirtuosoConnectionPoolDeadLockExample implements Example {
+public class VirtuosoConnectionPoolDeadLock implements Runnable {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(VirtuosoConnectionPoolDeadLockExample.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(VirtuosoConnectionPoolDeadLock.class);
 
     private static final String GRAPH_NAME = "g://fr.dudie.jena/example";
     private String host;
@@ -36,13 +36,13 @@ public class VirtuosoConnectionPoolDeadLockExample implements Example {
 
     private ThreadPoolExecutor executor;
 
-    @Override
-    public void setLauncher(final Launcher l) {
-        host = l.virtHost;
-        port = l.virtPort;
-        user = l.virtUser;
-        pass = l.virtPass;
-        threads = l.threadPoolSize;
+    VirtuosoConnectionPoolDeadLock(String virtHost, int virtPort, String virtUser, String virtPass, int threadPoolSize, int threadMaxConnectionSize){
+        host = virtHost;
+        port = virtPort;
+        user = virtUser;
+        pass = virtPass;
+        threads = threadPoolSize;
+        maxConnections = threadMaxConnectionSize;
     }
 
     @Override

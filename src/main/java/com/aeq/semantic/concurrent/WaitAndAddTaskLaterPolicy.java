@@ -1,4 +1,4 @@
-package fr.dudie.jena.example.concurrent;
+package com.aeq.semantic.concurrent;
 
 import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.ThreadPoolExecutor;
